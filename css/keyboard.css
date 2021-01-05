@@ -1,0 +1,67 @@
+/*all*/
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+/*all*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Audiowide", cursive;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+
+/*main*/
+.keyboard-container {
+  background-color: #9400d3;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  background-color: #9400d3;
+}
+kbd.kbd-key {
+  background-color: #800080;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 5px;
+  transition: 1s ease;
+}
+kbd.kbd-key:hover {
+  background-color: #dda0dd;
+  color: #9400d3;
+  box-shadow: 2px 2px 1px #800080;
+}
+#led-circle {
+  color: green;
+}
+.space {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #9400d3;
+  width: 30%;
+  color: #fff;
+  border-radius: 5px;
+  transition: 1s ease;
+}
+.space:hover {
+  background-color: #dda0dd;
+  color: #9400d3;
+}
+
+/*footer*/
+/*author-description*/
+.author-description {
+  text-align: center;
+}
