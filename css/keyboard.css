@@ -43,6 +43,7 @@ kbd.kbd-key {
   justify-content: center;
   margin: auto;
   width: 30%;
+  padding: 15px 0px;
   color: #fff;
   border-radius: 5px;
   transition: 1s ease;
