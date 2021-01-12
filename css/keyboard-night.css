@@ -1,0 +1,28 @@
+/*Night keyboard style*/
+
+.keyboard-container {
+  background-color: #9400d3;
+}
+.keyboard-row {
+  background-color: #9400d3;
+}
+
+kbd.kbd-key {
+  background-color: #800080;
+  color: #fff;
+  transition: 1s ease;
+}
+
+kbd.kbd-key:hover {
+  background-color: #dda0dd;
+  color: #9400d3;
+  box-shadow: 2px 2px 1px #800080;
+}
+
+.space {
+  background-color: #800080;
+}
+.space:hover {
+  background-color: #dda0dd;
+  color: #9400d3;
+}
