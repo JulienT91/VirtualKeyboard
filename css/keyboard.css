@@ -18,7 +18,7 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 10px 0px;
+  padding: 0.625em 0em;
 }
 .keyboard-row {
   display: flex;
@@ -26,13 +26,13 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 5px;
+  padding: 0.3125em;
 }
 kbd.kbd-key {
   cursor: pointer;
   padding: 8px 14px;
-  margin: 0 4px;
-  border-radius: 5px;
+  margin: 0 0.3em;
+  border-radius: 0.3125em;
 }
 #led-circle {
   color: green;
@@ -44,7 +44,7 @@ kbd.kbd-key {
   width: 30%;
   padding: 15px 0px;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 0.3125em;
   transition: 1s ease;
 }
 /*footer*/
