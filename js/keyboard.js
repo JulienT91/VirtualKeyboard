@@ -1,5 +1,5 @@
 /*Virtual Keyboard JS*/
-/*Récuperer les touches , les faires correspondres*/
+/*Récuperer les touches , les faire correspondres*/
 window.addEventListener("load",()=> {
     const nightMode = document.getElementById('nightmode');
     const upperCaseLock = document.getElementById('caplock');
