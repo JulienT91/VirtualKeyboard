@@ -3,12 +3,6 @@ body {
   background-color: #000;
   color: #dda0dd;
 }
-.keyboard-container {
-  background-color: #000;
-}
-.keyboard-row {
-  background-color: #000;
-}
 
 .kbd-key {
   background-color: #800080;
