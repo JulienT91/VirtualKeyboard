@@ -15,6 +15,7 @@ h1 {
 
 /*main*/
 .keyboard-container {
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -22,7 +23,6 @@ h1 {
 }
 .keyboard-row {
   display: flex;
-  flex-direction: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
