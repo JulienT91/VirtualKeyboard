@@ -10,7 +10,7 @@
 }
 h1 {
   text-align: center;
-  padding: 10px 0px;
+  padding: 0.625em 0em;
 }
 
 /*main*/
@@ -30,8 +30,8 @@ h1 {
 }
 kbd.kbd-key {
   cursor: pointer;
-  padding: 8px 14px;
-  margin: 0 0.3em;
+  padding: 0.5em 0.875em;
+  margin: 0em 0.3em;
   border-radius: 0.3125em;
 }
 #led-circle {
@@ -42,7 +42,7 @@ kbd.kbd-key {
   justify-content: center;
   margin: auto;
   width: 30%;
-  padding: 15px 0px;
+  padding: 0.9375em 0em;
   color: #fff;
   border-radius: 0.3125em;
   transition: 1s ease;
@@ -51,7 +51,7 @@ kbd.kbd-key {
 /*author-description*/
 .author-description {
   text-align: center;
-  padding: 10px 0px;
+  padding: 0.625em 0em;
 }
 
 .text-area {
