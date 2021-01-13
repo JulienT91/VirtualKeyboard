@@ -7,7 +7,6 @@ body {
 .kbd-key {
   background-color: #800080;
   color: #dda0dd;
-  transition: 1s ease;
 }
 
 .kbd-key:hover {
