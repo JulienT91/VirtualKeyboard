@@ -45,7 +45,7 @@ kbd.kbd-key {
   padding: 0.9375em 0em;
   color: #fff;
   border-radius: 0.3125em;
-  transition: 1s ease;
+  transition: 0.3s ease;
 }
 /*footer*/
 /*author-description*/
