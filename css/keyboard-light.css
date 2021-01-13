@@ -1,10 +1,7 @@
 /*Light keyboard style*/
 
-.keyboard-container {
-  background-color: #9400d3;
-}
 .keyboard-row {
-  background-color: #9400d3;
+  background-color: #fff;
 }
 
 kbd.kbd-key {
