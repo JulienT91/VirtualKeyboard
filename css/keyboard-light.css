@@ -3,7 +3,6 @@
 .kbd-key {
   background-color: #800080;
   color: #fff;
-  transition: 1s ease;
 }
 
 .kbd-key:hover {
