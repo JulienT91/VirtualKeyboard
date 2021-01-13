@@ -1,15 +1,18 @@
 /*Night keyboard style*/
-
+body {
+  background-color: #000;
+  color: #dda0dd;
+}
 .keyboard-container {
-  background-color: #9400d3;
+  background-color: #000;
 }
 .keyboard-row {
-  background-color: #9400d3;
+  background-color: #000;
 }
 
 kbd.kbd-key {
   background-color: #800080;
-  color: #fff;
+  color: #dda0dd;
   transition: 1s ease;
 }
 
