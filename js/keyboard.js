@@ -35,6 +35,9 @@ window.addEventListener("load", () => {
   };
 
   // space Function
+  const space = (val) => {
+    val.value += " ";
+  };
 
   // UpperCase / lowerCase
 
