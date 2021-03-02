@@ -1,7 +1,7 @@
 /*Virtual Keyboard JS*/
 /*Récuperer les touches , les faire correspondre*/
 window.addEventListener("load", () => {
-  const kbdKey = document.querySelectorAll(".kbd-key");
+  const kbdKey = document.querySelectorAll("#text-write-key");
   const textWriting = document.querySelector("#textWriting");
   const upperCase = document.querySelector("#shiftkey");
   const nightMode = document.querySelector("#changeMode");
@@ -30,8 +30,8 @@ window.addEventListener("load", () => {
   });
   // writing function
 
-  kbdKey.forEach((v) => {
-    v.addEventListener("click", (e) => {
+  kbdKey.forEach((value) => {
+    value.addEventListener("click", (e) => {
       newValue = e.target.value;
       textWriting.value += newValue;
     });
