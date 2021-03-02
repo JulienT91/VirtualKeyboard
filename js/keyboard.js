@@ -29,4 +29,10 @@ window.addEventListener("load", () => {
     }
   });
   // Delete function
+  const deleteValue = (val) => {
+    const lastCharDelete = val.slice(-1); // on utilise slice(-1) pour supprimer la dernière valeur
+    textWriting.value = val.replace(lastCharDelete, ""); // on remplace la dernière valeur par une string vide
+  };
+
+  // space Function
 });
