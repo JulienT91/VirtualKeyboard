@@ -3,10 +3,10 @@
 window.addEventListener("load", () => {
   const kbdKey = document.querySelectorAll("#text-write-key");
   const textWriting = document.querySelector("#textWriting");
-  const upperCase = document.querySelector("#shiftkey");
+  const toUpperCase = document.querySelector("#shiftkey");
   const nightMode = document.querySelector("#changeMode");
   let newValue = "";
-  let isUppercase = false;
+  let isUpperCase = false;
   let isNightMode = false;
 
   // Night Mode function
@@ -28,12 +28,29 @@ window.addEventListener("load", () => {
       document.getElementsByTagName("link")[2].remove();
     }
   });
-  // writing function
-
-  kbdKey.forEach((value) => {
+  // upperCase
+  toUpperCase.addEventListener("click", () => {
+    if (!isUpperCase) {
+      toUpperCase.value = "MAJ";
+      isUpperCase = true;
+      document.querySelectorAll("#text-writing-key").forEach((kbd) => {
+        kbd.value = kbd.value.toUpperCase();
+      });
+    } else {
+      toUpperCase.value = "MIN";
+      !isUpperCase;
+      document.querySelectorAll("#text-writing-key").forEach((kbd) => {
+        kbd.value = kbd.value.toLowerCase();
+      });
+    }
+  });
+});
+// writing function
+/* kbdKey.forEach((value) => {
     value.addEventListener("click", (e) => {
       newValue = e.target.value;
       textWriting.value += newValue;
     });
-  });
-});
+  }
+)};
+*/
