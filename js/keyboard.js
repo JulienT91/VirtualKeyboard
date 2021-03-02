@@ -35,4 +35,8 @@ window.addEventListener("load", () => {
   };
 
   // space Function
+
+  // UpperCase / lowerCase
+
+  // Writing
 });
