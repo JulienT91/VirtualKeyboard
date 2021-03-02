@@ -1,14 +1,32 @@
 /*Virtual Keyboard JS*/
 /*Récuperer les touches , les faire correspondre*/
-window.addEventListener("load",()=> {
-    const nightMode = document.getElementById('nightmode');
-    const upperCaseLock = document.getElementById('caplock');
-    const enter = document.getElementById('enter');
-    const space = document.getElementById('space-key');
-    const textWriting = document.getElementById('textWriting');
+window.addEventListener("load", () => {
+  const kbdKey = document.querySelectorAll(".kbd-key");
+  const textWriting = document.querySelector("#textWriting");
+  const upperCase = document.querySelector("#shiftkey");
+  const nightMode = document.querySelector("#changeMode");
+  let newValue = "";
+  let isUppercase = false;
+  let isNightMode = false;
 
-    let nvalue = '';
-    let isUpp = false;
-    let isNight = false;
-
+  // Night Mode function
+  // on créer un évenement au click
+  nightMode.addEventListener("click", () => {
+    if (!isNightMode) {
+      nightMode.value = "NIGHT / OFF";
+      // on crée un nouveau lien pour ajouter le css night mode
+      let link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "css/keyboard-night.css";
+      // on va chercher ce lien dans l'index 0 des lien de HEAD
+      document.getElementsByTagName("HEAD")[0].appendChild(link);
+      isNightMode = true;
+    } else {
+      isNightMode = false;
+      nightMode.value = "NIGHT / ON";
+      // on remove le lien qu'on viens de créer
+      document.getElementsByTagName("link")[2].remove();
+    }
+  });
+  // Delete function
 });
