@@ -1,13 +1,21 @@
 /*Virtual Keyboard JS*/
 /*Récuperer les touches , les faire correspondre*/
 window.addEventListener("load", () => {
-  const kbdKey = document.querySelectorAll("#text-write-key");
+  const kbdKey = document.querySelectorAll(".text-write-key");
   const textWriting = document.querySelector("#textWriting");
   const toUpperCase = document.querySelector("#shiftkey");
   const nightMode = document.querySelector("#changeMode");
   let newValue = "";
   let isUpperCase = false;
   let isNightMode = false;
+
+  // text writing
+  kbdKey.forEach((val) => {
+    val.addEventListener("click", (event) => {
+      newValue = event.target.value;
+      textWriting.value += newValue;
+    });
+  });
 
   // Night Mode function
   // on créer un évenement au click
@@ -28,29 +36,27 @@ window.addEventListener("load", () => {
       document.getElementsByTagName("link")[2].remove();
     }
   });
+
   // upperCase
   toUpperCase.addEventListener("click", () => {
     if (!isUpperCase) {
-      toUpperCase.value = "MAJ";
+      toUpperCase.value = "MIN";
       isUpperCase = true;
       document.querySelectorAll("#text-writing-key").forEach((kbd) => {
+        kbdKey.value.toUpperCase;
         kbd.value = kbd.value.toUpperCase();
       });
     } else {
-      toUpperCase.value = "MIN";
-      !isUpperCase;
+      toUpperCase.value = "MAJ";
+      isUpperCase = false;
       document.querySelectorAll("#text-writing-key").forEach((kbd) => {
         kbd.value = kbd.value.toLowerCase();
       });
     }
   });
+
+  // space
+  const space = (value) => {
+    value.value += " ";
+  };
 });
-// writing function
-/* kbdKey.forEach((value) => {
-    value.addEventListener("click", (e) => {
-      newValue = e.target.value;
-      textWriting.value += newValue;
-    });
-  }
-)};
-*/
