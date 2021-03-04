@@ -30,6 +30,7 @@
       </div>
       <div class="keyboard-container">
         <div class="keyboard-row first">
+        <!--changer englober des input dans un kbd car kbd value ="" n'est pas valide sur le w3c validator-->
           <kbd><input type="button" class="kbd-key lettr text-write-key" value="1" /></kbd>
           <kbd><input type="button" class="kbd-key lettr text-write-key" value="2" /></kbd>
           <kbd><input type="button" class="kbd-key lettr text-write-key" value="3" /></kbd>
@@ -73,7 +74,7 @@
           <kbd><input type="button" class="kbd-key lettr text-write-key" value="m" /></kbd>
           <kbd class="kbd-key" id="enter"
             ><i class="fas fa-arrow-left"></i
-            ><kbd class="kbd-key" value="enter">Enter</kbd></kbd
+            ><kbd class="kbd-key" value="enter" id="enterKbd">Enter</kbd></kbd
           >
         </div>
         <div class="keyboard-row fourth">
