@@ -5,6 +5,9 @@ window.addEventListener("load", () => {
   const textWriting = document.querySelector("#textWriting");
   const toUpperCase = document.querySelector("#shiftkey");
   const nightMode = document.querySelector("#changeMode");
+  const capLock = document.querySelector("#caplock");
+  const enterKbd = document.querySelector("#enterKbd");
+
   let newValue = "";
   let isUpperCase = false;
   let isNightMode = false;
@@ -60,3 +63,4 @@ window.addEventListener("load", () => {
     value.value += " ";
   };
 });
+// a faire : fonction pour la touche entrée , fonction pour la touche capLock
