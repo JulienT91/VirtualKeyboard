@@ -22,6 +22,9 @@ window.addEventListener("load", () => {
   space.addEventListener("click", () => {
     textWriting.value += " ";
   });
+  // upperCase/lowerCase
+
+  // delete
 
   // Night Mode function
   // on créer un évenement au click
@@ -51,5 +54,4 @@ window.addEventListener("load", () => {
     });
   });
 });
-// a faire : fonction pour la touche entrée(retour ligne) , fonction pour la touche capLock(texte en upperCase + style qui change) , function pour delete ( suppression dernier char)
-// fonction espace (+= " ");
+// a faire  fonction pour la touche capLock(texte en upperCase + style qui change) , function pour delete ( suppression dernier char);
