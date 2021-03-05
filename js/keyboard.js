@@ -14,9 +14,17 @@ window.addEventListener("load", () => {
   let isUpperCase = false;
   let isNightMode = false;
 
+  // Enter
+  enterKbd.addEventListener("click", () => {
+    textWriting.value += "\n";
+  });
+  // space
+  space.addEventListener("click", () => {
+    textWriting.value += " ";
+  });
+
   // Night Mode function
   // on créer un évenement au click
-
   nightMode.addEventListener("click", () => {
     if (!isNightMode) {
       nightMode.value = "NIGHT / OFF";
@@ -41,14 +49,6 @@ window.addEventListener("load", () => {
       newValue = event.target.value;
       textWriting.value += newValue;
     });
-  });
-
-  // Enter
-  // à chaque fois que je clique sur la touche enter , je dois produire un saut de ligne ( /n );
-  // récuperer le contenu de texte aréa , ajouter un saut de ligne à chaque évenement click;
-  enterKbd.addEventListener("click", (e) => {
-    let textOnTextArea = textWriting.innerHTML;
-    e.value = textOnTextArea += "/n";
   });
 });
 // a faire : fonction pour la touche entrée(retour ligne) , fonction pour la touche capLock(texte en upperCase + style qui change) , function pour delete ( suppression dernier char)
