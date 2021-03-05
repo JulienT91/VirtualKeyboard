@@ -34,12 +34,21 @@ window.addEventListener("load", () => {
       document.getElementsByTagName("link")[2].remove();
     }
   });
+
   // text writing
   kbdKey.forEach((val) => {
     val.addEventListener("click", (event) => {
       newValue = event.target.value;
       textWriting.value += newValue;
     });
+  });
+
+  // Enter
+  // à chaque fois que je clique sur la touche enter , je dois produire un saut de ligne ( /n );
+  // récuperer le contenu de texte aréa , ajouter un saut de ligne à chaque évenement click;
+  enterKbd.addEventListener("click", (e) => {
+    let textOnTextArea = textWriting.innerHTML;
+    e.value = textOnTextArea += "/n";
   });
 });
 // a faire : fonction pour la touche entrée(retour ligne) , fonction pour la touche capLock(texte en upperCase + style qui change) , function pour delete ( suppression dernier char)
