@@ -3,7 +3,6 @@
 window.addEventListener("load", () => {
   const kbdKey = document.querySelectorAll(".text-write-key");
   const textWriting = document.querySelector("#textWriting");
-  const toUpperCase = document.querySelector("#shiftKey");
   const nightMode = document.querySelector("#changeMode");
   const capLock = document.querySelector("#caplock");
   const deleteBtn = document.querySelector("#delete");
@@ -23,7 +22,22 @@ window.addEventListener("load", () => {
     textWriting.value += " ";
   });
   // upperCase/lowerCase
+  capLock.addEventListener("click", () => {
+    if (!isUpperCase) {
+      capLock.value = "MIN";
+      isUpperCase = true;
 
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toUpperCase();
+      });
+    } else {
+      capLock.value = "MAJ";
+      isUpperCase = false;
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toLowerCase();
+      });
+    }
+  });
   // delete
 
   // Night Mode function
