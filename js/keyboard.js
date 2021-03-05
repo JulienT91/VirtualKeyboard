@@ -68,4 +68,5 @@ window.addEventListener("load", () => {
     });
   });
 });
-// a faire  fonction pour la touche capLock(texte en upperCase + style qui change) , function pour delete ( suppression dernier char);
+// a faire  function pour delete ( suppression dernier char) + function pour le shift ;
+// Finaliser la fonction avec le caplock ( changement de style)
