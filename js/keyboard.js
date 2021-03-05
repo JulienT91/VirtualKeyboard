@@ -3,25 +3,20 @@
 window.addEventListener("load", () => {
   const kbdKey = document.querySelectorAll(".text-write-key");
   const textWriting = document.querySelector("#textWriting");
-  const toUpperCase = document.querySelector("#shiftkey");
+  const toUpperCase = document.querySelector("#shiftKey");
   const nightMode = document.querySelector("#changeMode");
   const capLock = document.querySelector("#caplock");
+  const deleteBtn = document.querySelector("#delete");
   const enterKbd = document.querySelector("#enterKbd");
+  const space = document.querySelector("#space-key");
 
   let newValue = "";
   let isUpperCase = false;
   let isNightMode = false;
 
-  // text writing
-  kbdKey.forEach((val) => {
-    val.addEventListener("click", (event) => {
-      newValue = event.target.value;
-      textWriting.value += newValue;
-    });
-  });
-
   // Night Mode function
   // on créer un évenement au click
+
   nightMode.addEventListener("click", () => {
     if (!isNightMode) {
       nightMode.value = "NIGHT / OFF";
@@ -39,28 +34,13 @@ window.addEventListener("load", () => {
       document.getElementsByTagName("link")[2].remove();
     }
   });
-
-  // upperCase
-  toUpperCase.addEventListener("click", () => {
-    if (!isUpperCase) {
-      toUpperCase.value = "MIN";
-      isUpperCase = true;
-      document.querySelectorAll("#text-writing-key").forEach((kbd) => {
-        kbdKey.value.toUpperCase;
-        kbd.value = kbd.value.toUpperCase();
-      });
-    } else {
-      toUpperCase.value = "MAJ";
-      isUpperCase = false;
-      document.querySelectorAll("#text-writing-key").forEach((kbd) => {
-        kbd.value = kbd.value.toLowerCase();
-      });
-    }
+  // text writing
+  kbdKey.forEach((val) => {
+    val.addEventListener("click", (event) => {
+      newValue = event.target.value;
+      textWriting.value += newValue;
+    });
   });
-
-  // space
-  const space = (value) => {
-    value.value += " ";
-  };
 });
-// a faire : fonction pour la touche entrée , fonction pour la touche capLock
+// a faire : fonction pour la touche entrée(retour ligne) , fonction pour la touche capLock(texte en upperCase + style qui change) , function pour delete ( suppression dernier char)
+// fonction espace (+= " ");
