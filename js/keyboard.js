@@ -38,7 +38,11 @@ window.addEventListener("load", () => {
       });
     }
   });
-  // delete
+  // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
+
+  deleteBtn.addEventListener("click", () => {
+    textWriting.value = textWriting.value.charAt((textWriting.length = -1));
+  });
 
   // Night Mode function
   // on créer un évenement au click
@@ -68,5 +72,6 @@ window.addEventListener("load", () => {
     });
   });
 });
-// a faire  function pour delete ( suppression dernier char) + function pour le shift ;
+// a faire  function pour delete ( suppression dernier char) (à finaliser)
+// function pour le shift ;
 // Finaliser la fonction avec le caplock ( changement de style)
