@@ -5,8 +5,7 @@ window.addEventListener("load", () => {
   const textWriting = document.querySelector("#textWriting");
   const nightMode = document.querySelector("#changeMode");
   const capLock = document.querySelector("#caplock");
-  const capLockLed = document.getElementsByClassName("majColor");
-
+  const capLockLed = document.querySelector(".majColor");
   const shiftKey = document.querySelector("#shiftKey");
   const deleteBtn = document.querySelector("#delete");
   const enterKbd = document.querySelector("#enterKbd");
@@ -24,6 +23,7 @@ window.addEventListener("load", () => {
   space.addEventListener("click", () => {
     textWriting.value += " ";
   });
+
   // upperCase/lowerCase
   capLock.addEventListener("click", () => {
     if (!isUpperCase) {
