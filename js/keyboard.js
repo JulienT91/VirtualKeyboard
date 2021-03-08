@@ -81,5 +81,4 @@ window.addEventListener("load", () => {
   });
 });
 // function pour le shift ;
-// Finaliser la fonction avec le caplock ( changement de style)
 // voir pour faire des event avec les keypress / keyup
