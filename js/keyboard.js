@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
   const nightMode = document.querySelector("#changeMode");
   const capLock = document.querySelector("#caplock");
   const capLockLed = document.querySelector(".majColor");
+  const padLock = document.querySelector(".fa-lock-open");
   const shiftKey = document.querySelector("#shiftKey");
   const deleteBtn = document.querySelector("#delete");
   const enterKbd = document.querySelector("#enterKbd");
@@ -30,6 +31,7 @@ window.addEventListener("load", () => {
       capLock.value = "MIN";
       isUpperCase = true;
       capLockLed.classList.replace("majColor", "ledOn");
+      padLock.classList.replace("fa-lock-open", "fa-lock");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
         shiftKey.value = "MAJ";
@@ -38,6 +40,7 @@ window.addEventListener("load", () => {
       capLock.value = "MAJ";
       isUpperCase = false;
       capLockLed.classList.replace("ledOn", "majColor");
+      padLock.classList.replace("fa-lock", "fa-lock-open");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toLowerCase();
         shiftKey.value = "MIN";
