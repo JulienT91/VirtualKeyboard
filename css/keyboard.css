@@ -37,6 +37,9 @@ h1 {
 .majColor {
   color: #e8c7f6;
 }
+.ledOn {
+  color: #c43bfe;
+}
 .space {
   display: flex;
   justify-content: center;

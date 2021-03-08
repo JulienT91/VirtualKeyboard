@@ -29,6 +29,7 @@ window.addEventListener("load", () => {
     if (!isUpperCase) {
       capLock.value = "MIN";
       isUpperCase = true;
+      capLockLed.classList.replace("majColor", "ledOn");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
         shiftKey.value = "MAJ";
@@ -36,6 +37,7 @@ window.addEventListener("load", () => {
     } else {
       capLock.value = "MAJ";
       isUpperCase = false;
+      capLockLed.classList.replace("ledOn", "majColor");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toLowerCase();
         shiftKey.value = "MIN";
