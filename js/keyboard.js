@@ -5,6 +5,9 @@ window.addEventListener("load", () => {
   const textWriting = document.querySelector("#textWriting");
   const nightMode = document.querySelector("#changeMode");
   const capLock = document.querySelector("#caplock");
+  const capLockLed = document.getElementsByClassName("majColor");
+
+  const shiftKey = document.querySelector("#shiftKey");
   const deleteBtn = document.querySelector("#delete");
   const enterKbd = document.querySelector("#enterKbd");
   const space = document.querySelector("#space-key");
@@ -26,20 +29,23 @@ window.addEventListener("load", () => {
     if (!isUpperCase) {
       capLock.value = "MIN";
       isUpperCase = true;
-
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
+        shiftKey.value = "MAJ";
       });
     } else {
       capLock.value = "MAJ";
       isUpperCase = false;
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toLowerCase();
+        shiftKey.value = "MIN";
       });
     }
   });
-  // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
 
+  //ShiftKey
+
+  // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
   deleteBtn.addEventListener("click", () => {
     textWriting.value = textWriting.value.charAt((textWriting.length = -1));
   });
@@ -72,6 +78,6 @@ window.addEventListener("load", () => {
     });
   });
 });
-// a faire  function pour delete ( suppression dernier char) (à finaliser)
 // function pour le shift ;
 // Finaliser la fonction avec le caplock ( changement de style)
+// voir pour faire des event avec les keypress / keyup
