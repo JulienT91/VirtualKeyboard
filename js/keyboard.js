@@ -49,10 +49,19 @@ window.addEventListener("load", () => {
   });
 
   //ShiftKey
-
+  shiftKey.addEventListener("click", () => {
+    if (!isUpperCase) {
+      textWriting.value = textWriting.value.toUpperCase();
+      shiftKey.value = "MAJ";
+      isUpperCase = true;
+    } else {
+      isUpperCase = false;
+      shiftKey.value = "MIN";
+    }
+  });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
   deleteBtn.addEventListener("click", () => {
-    textWriting.value = textWriting.value.charAt((textWriting.length = -1));
+    textWriting.value = textWriting.value.substr(" ", -1);
   });
 
   // Night Mode function
@@ -83,5 +92,5 @@ window.addEventListener("load", () => {
     });
   });
 });
-// function pour le shift ;
+
 // voir pour faire des event avec les keypress / keyup
