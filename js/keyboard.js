@@ -47,16 +47,10 @@ window.addEventListener("load", () => {
       });
     }
   });
-
   //ShiftKey
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      textWriting.value = textWriting.value.toUpperCase();
-      shiftKey.value = "MAJ";
-      isUpperCase = true;
-    } else {
-      isUpperCase = false;
-      shiftKey.value = "MIN";
+      kbdKey.forEach((e) => console.log(e.value.toUpperCase()));
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
