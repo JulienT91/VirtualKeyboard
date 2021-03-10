@@ -60,8 +60,9 @@ window.addEventListener("load", () => {
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
+  // tout prendre et supprimer le dernier caractère de la chaine.
   deleteBtn.addEventListener("click", () => {
-    textWriting.value = textWriting.value.substr(-1);
+    textWriting.value = textWriting.value.slice(0, -1);
   });
 
   // Night Mode function
