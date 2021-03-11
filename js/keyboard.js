@@ -51,15 +51,7 @@ window.addEventListener("load", () => {
   //ShiftKey
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      isUpperCase = true;
-      kbdKey.forEach((val) => {
-        val.addEventListener("click", (event) => {
-          newValue = event.target.value.toUpperCase();
-          textWriting.value += newValue;
-        });
-      });
-    } else {
-      isUpperCase = false;
+      textWriting.value = textWriting.value.toUpperCase();
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
