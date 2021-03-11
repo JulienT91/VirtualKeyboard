@@ -90,7 +90,9 @@ window.addEventListener("load", () => {
 
   //AZERTY / QWERTY
   // récuperer chaque valeur , convertir le tout en tableau et remplacer chaque valeur par une autre
-  qwertyBtn.addEventListener("click", () => {});
+  qwertyBtn.addEventListener("click", () => {
+    console.log();
+  });
 });
 
 // voir pour faire des event avec les keypress / keyup
