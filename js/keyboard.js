@@ -11,6 +11,7 @@ window.addEventListener("load", () => {
   const deleteBtn = document.querySelector("#delete");
   const enterKbd = document.querySelector("#enterKbd");
   const space = document.querySelector("#space-key");
+  const qwertyBtn = document.querySelector("#changeBtn");
 
   let newValue = "";
   let isUpperCase = false;
@@ -41,8 +42,8 @@ window.addEventListener("load", () => {
       isUpperCase = false;
       capLockLed.classList.replace("ledOn", "majColor");
       padLock.classList.replace("fa-lock", "fa-lock-open");
-      kbdKey.forEach((btn) => {
-        btn.value = btn.value.toLowerCase();
+      kbdKey.forEach(() => {
+        textWriting.value = textWriting.value.toLowerCase();
         shiftKey.value = "MIN";
       });
     }
@@ -50,7 +51,15 @@ window.addEventListener("load", () => {
   //ShiftKey
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      kbdKey.forEach((e) => console.log(e.value.toUpperCase()));
+      isUpperCase = true;
+      kbdKey.forEach((val) => {
+        val.addEventListener("click", (event) => {
+          newValue = event.target.value.toUpperCase();
+          textWriting.value += newValue;
+        });
+      });
+    } else {
+      isUpperCase = false;
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
@@ -86,6 +95,10 @@ window.addEventListener("load", () => {
       textWriting.value += newValue;
     });
   });
+
+  //AZERTY / QWERTY
+  // récuperer chaque valeur , convertir le tout en tableau et remplacer chaque valeur par une autre
+  qwertyBtn.addEventListener("click", () => {});
 });
 
 // voir pour faire des event avec les keypress / keyup
