@@ -42,8 +42,8 @@ window.addEventListener("load", () => {
       isUpperCase = false;
       capLockLed.classList.replace("ledOn", "majColor");
       padLock.classList.replace("fa-lock", "fa-lock-open");
-      kbdKey.forEach(() => {
-        textWriting.value = textWriting.value.toLowerCase();
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toLowerCase();
         shiftKey.value = "MIN";
       });
     }
@@ -52,8 +52,6 @@ window.addEventListener("load", () => {
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
       textWriting.value = textWriting.value.toUpperCase();
-    } else {
-      textWriting.value = textWriting.value.toLowerCase();
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
