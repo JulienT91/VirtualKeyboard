@@ -52,6 +52,8 @@ window.addEventListener("load", () => {
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
       textWriting.value = textWriting.value.toUpperCase();
+    } else {
+      textWriting.value = textWriting.value.toLowerCase();
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
