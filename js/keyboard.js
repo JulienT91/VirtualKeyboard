@@ -43,17 +43,18 @@ window.addEventListener("load", () => {
       capLockLed.classList.replace("ledOn", "majColor");
       padLock.classList.replace("fa-lock", "fa-lock-open");
       kbdKey.forEach((btn) => {
+        console.log(btn.value);
         btn.value = btn.value.toLowerCase();
         shiftKey.value = "MIN";
       });
     }
   });
   //ShiftKey
-  shiftKey.addEventListener("click", () => {
+  /*shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      textWriting.value = textWriting.value.toUpperCase();
+      kbdKey.forEach(btn);
     }
-  });
+  });*/
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
   // tout prendre et supprimer le dernier caractère de la chaine.
   deleteBtn.addEventListener("click", () => {
