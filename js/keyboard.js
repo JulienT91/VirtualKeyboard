@@ -59,12 +59,6 @@ window.addEventListener("load", () => {
         shiftKey.value = "MAJ";
         isUpperCase = false;
         console.log(isUpperCase);
-        shiftKey.addEventListener("click", () => {
-          if (isUpperCase) {
-            shiftKey.value = "MIN";
-            btn.value = btn.value.toLowerCase();
-          }
-        });
       });
     }
   });
