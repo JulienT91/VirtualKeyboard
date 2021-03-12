@@ -50,11 +50,24 @@ window.addEventListener("load", () => {
     }
   });
   //ShiftKey
-  /*shiftKey.addEventListener("click", () => {
+  // forcer a repasser a false après la première lettre
+  shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      kbdKey.forEach(btn);
+      shiftKey.value = "MIN";
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toUpperCase();
+        shiftKey.value = "MAJ";
+        isUpperCase = false;
+        console.log(isUpperCase);
+        shiftKey.addEventListener("click", () => {
+          if (isUpperCase) {
+            shiftKey.value = "MIN";
+            btn.value = btn.value.toLowerCase();
+          }
+        });
+      });
     }
-  });*/
+  });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
   // tout prendre et supprimer le dernier caractère de la chaine.
   deleteBtn.addEventListener("click", () => {
