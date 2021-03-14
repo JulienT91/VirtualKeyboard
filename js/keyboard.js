@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
       padLock.classList.replace("fa-lock-open", "fa-lock");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
-        shiftKey.value = "MAJ";
+        shiftKey.value = "MIN";
       });
     } else {
       capLock.value = "MAJ";
@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
       kbdKey.forEach((btn) => {
         console.log(btn.value);
         btn.value = btn.value.toLowerCase();
-        shiftKey.value = "MIN";
+        shiftKey.value = "MAJ";
       });
     }
   });
@@ -53,13 +53,18 @@ window.addEventListener("load", () => {
   // forcer a repasser a false après la première lettre
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      shiftKey.value = "MIN";
       kbdKey.forEach((btn) => {
+        isUpperCase = true;
         btn.value = btn.value.toUpperCase();
-        shiftKey.value = "MAJ";
-        isUpperCase = false;
         console.log(isUpperCase);
       });
+      isUpperCase = false;
+      if (!isUpperCase) {
+        kbdKey.forEach((btn) => {
+          console.log(isUpperCase);
+          btn.value = btn.value.toLowerCase();
+        });
+      }
     }
   });
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
