@@ -49,28 +49,20 @@ window.addEventListener("load", () => {
       });
     }
   });
+
   //ShiftKey
-  // forcer a repasser a false après la première lettre
-  /*shiftKey.addEventListener("click", () => {
-    if (!isUpperCase) {
-      kbdKey.forEach((btn) => {
-        btn.value = btn.value.toUpperCase();
-        console.log(isUpperCase);
-        isUpperCase = true;
-      });
-    }
-  });*/
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
-        isUpperCase = true;
+        if (!isUpperCase) {
+          btn.addEventListener("click", () => {
+            kbdKey.forEach((btn) => {
+              btn.value = btn.value.toLowerCase();
+            });
+          });
+        }
       });
-      if ((isUpperCase = true)) {
-        kbdKey.addEventListener("click", function stopShift(e) {
-          e.preventDefault();
-        });
-      }
     }
   });
 
@@ -114,5 +106,3 @@ window.addEventListener("load", () => {
     console.log();
   });
 });
-
-// voir pour faire des event avec les keypress / keyup
