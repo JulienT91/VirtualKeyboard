@@ -61,13 +61,18 @@ window.addEventListener("load", () => {
               btn.value = btn.value.toLowerCase();
             });
           });
+        } else {
+          btn.addEventListener("click", () => {
+            kbdKey.forEach((btn) => {
+              btn.value = btn.value.toLowerCase();
+            });
+          });
         }
       });
     }
   });
 
-  // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
-  // tout prendre et supprimer le dernier caractère de la chaine.
+  // Delete
   deleteBtn.addEventListener("click", () => {
     textWriting.value = textWriting.value.slice(0, -1);
   });
