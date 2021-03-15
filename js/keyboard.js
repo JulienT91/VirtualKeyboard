@@ -51,22 +51,29 @@ window.addEventListener("load", () => {
   });
   //ShiftKey
   // forcer a repasser a false après la première lettre
+  /*shiftKey.addEventListener("click", () => {
+    if (!isUpperCase) {
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toUpperCase();
+        console.log(isUpperCase);
+        isUpperCase = true;
+      });
+    }
+  });*/
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
       kbdKey.forEach((btn) => {
-        isUpperCase = true;
         btn.value = btn.value.toUpperCase();
-        console.log(isUpperCase);
+        isUpperCase = true;
       });
-      isUpperCase = false;
-      if (!isUpperCase) {
-        kbdKey.forEach((btn) => {
-          console.log(isUpperCase);
-          btn.value = btn.value.toLowerCase();
+      if ((isUpperCase = true)) {
+        kbdKey.addEventListener("click", function stopShift(e) {
+          e.preventDefault();
         });
       }
     }
   });
+
   // delete ( à finaliser (suppression de toute la chaine de caractère et problème lorsqu'il reste qu'un seul caractère))
   // tout prendre et supprimer le dernier caractère de la chaine.
   deleteBtn.addEventListener("click", () => {
