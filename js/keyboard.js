@@ -2,7 +2,6 @@
 /*Récuperer les touches , les faire correspondre*/
 window.addEventListener("load", () => {
   const kbdKey = document.querySelectorAll(".text-write-key");
-  const kbdKeyShift = document.querySelectorAll(".lettr");
   const textWriting = document.querySelector("#textWriting");
   const nightMode = document.querySelector("#changeMode");
   const capLock = document.querySelector("#caplock");
@@ -29,11 +28,11 @@ window.addEventListener("load", () => {
   //ShiftKey
   shiftKey.addEventListener("click", () => {
     if (!isUpperCase) {
-      kbdKeyShift.forEach((btn) => {
+      kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
         if (!isUpperCase) {
           btn.addEventListener("click", () => {
-            kbdKeyShift.forEach((btn) => {
+            kbdKey.forEach((btn) => {
               btn.value = btn.value.toLowerCase();
             });
           });
