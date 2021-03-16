@@ -15,6 +15,7 @@ window.addEventListener("load", () => {
 
   let newValue = "";
   let isUpperCase = false;
+  let activateCapLock = true;
   let isNightMode = false;
 
   // Enter
@@ -25,25 +26,13 @@ window.addEventListener("load", () => {
   space.addEventListener("click", () => {
     textWriting.value += " ";
   });
-  //ShiftKey
-  shiftKey.addEventListener("click", () => {
-    if (!isUpperCase) {
-      kbdKey.forEach((btn) => {
-        btn.value = btn.value.toUpperCase();
-        if (!isUpperCase) {
-          btn.addEventListener("click", () => {
-            kbdKey.forEach((btn) => {
-              btn.value = btn.value.toLowerCase();
-            });
-          });
-        }
-      });
-    }
-  });
 
+  //ShiftKey
+  // faire une condition pour tester si capLock = true
   // upperCase/lowerCase
   capLock.addEventListener("click", () => {
     if (!isUpperCase) {
+      activateCapLock = false;
       capLock.value = "MIN";
       isUpperCase = true;
       capLockLed.classList.replace("majColor", "ledOn");
@@ -51,8 +40,10 @@ window.addEventListener("load", () => {
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
         shiftKey.value = "MIN";
+        console.log(activateCapLock);
       });
     } else {
+      activateCapLock = true;
       capLock.value = "MAJ";
       isUpperCase = false;
       capLockLed.classList.replace("ledOn", "majColor");
@@ -61,9 +52,26 @@ window.addEventListener("load", () => {
         console.log(btn.value);
         btn.value = btn.value.toLowerCase();
         shiftKey.value = "MAJ";
+        console.log(activateCapLock);
       });
     }
   });
+  if (activateCapLock === true) {
+    shiftKey.addEventListener("click", () => {
+      if (!isUpperCase) {
+        kbdKey.forEach((btn) => {
+          btn.value = btn.value.toUpperCase();
+          if (!isUpperCase) {
+            btn.addEventListener("click", () => {
+              kbdKey.forEach((btn) => {
+                btn.value = btn.value.toLowerCase();
+              });
+            });
+          }
+        });
+      }
+    });
+  }
 
   // Delete
   deleteBtn.addEventListener("click", () => {
