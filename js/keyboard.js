@@ -61,12 +61,6 @@ window.addEventListener("load", () => {
               btn.value = btn.value.toLowerCase();
             });
           });
-        } else {
-          btn.addEventListener("click", () => {
-            kbdKey.forEach((btn) => {
-              btn.value = btn.value.toLowerCase();
-            });
-          });
         }
       });
     }
