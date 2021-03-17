@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
 
   let newValue = "";
   let isUpperCase = false;
-  let activateCapLock = true;
+  let activateCapLock = false;
   let isNightMode = false;
 
   // Enter
@@ -29,49 +29,71 @@ window.addEventListener("load", () => {
 
   //ShiftKey
   // faire une condition pour tester si capLock = true
+  // si caplock === true alors , isuppercase === true
+  // si caplock === true et isuppercase === true alors la valeur est en minuscule sinon
+  /* function shift() {
+    isUpperCase = false;
+    if (!isUpperCase) {
+      capLock.value = "MIN";
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toUpperCase();
+        shiftKey.value = "MIN";
+        isUpperCase = true;
+        if (!isUpperCase) {
+          btn.addEventListener("click", () => {
+            kbdKey.forEach((btn) => {
+              btn.value = btn.value.toLowerCase();
+            });
+          });
+        }
+      });
+    }
+  }*/
+
+  function shift() {
+    if (!isUpperCase && !activateCapLock) {
+      kbdKey.forEach((btn) => {
+        btn.value = btn.value.toUpperCase();
+        if (!isUpperCase) {
+          btn.addEventListener("click", () => {
+            kbdKey.forEach((btn) => {
+              btn.value = btn.value.toLowerCase();
+            });
+          });
+        }
+      });
+    }
+  }
+
+  if (activateCapLock === false) {
+    shiftKey.addEventListener("click", shift);
+  }
+
   // upperCase/lowerCase
   capLock.addEventListener("click", () => {
-    if (!isUpperCase) {
-      activateCapLock = false;
+    if (!isUpperCase && !activateCapLock) {
       capLock.value = "MIN";
       isUpperCase = true;
+      activateCapLock = true;
       capLockLed.classList.replace("majColor", "ledOn");
       padLock.classList.replace("fa-lock-open", "fa-lock");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
         shiftKey.value = "MIN";
-        console.log(activateCapLock);
       });
     } else {
-      activateCapLock = true;
       capLock.value = "MAJ";
       isUpperCase = false;
+      activateCapLock = false;
       capLockLed.classList.replace("ledOn", "majColor");
       padLock.classList.replace("fa-lock", "fa-lock-open");
       kbdKey.forEach((btn) => {
         console.log(btn.value);
         btn.value = btn.value.toLowerCase();
         shiftKey.value = "MAJ";
-        console.log(activateCapLock);
       });
     }
   });
-  if (activateCapLock === true) {
-    shiftKey.addEventListener("click", () => {
-      if (!isUpperCase) {
-        kbdKey.forEach((btn) => {
-          btn.value = btn.value.toUpperCase();
-          if (!isUpperCase) {
-            btn.addEventListener("click", () => {
-              kbdKey.forEach((btn) => {
-                btn.value = btn.value.toLowerCase();
-              });
-            });
-          }
-        });
-      }
-    });
-  }
 
   // Delete
   deleteBtn.addEventListener("click", () => {
