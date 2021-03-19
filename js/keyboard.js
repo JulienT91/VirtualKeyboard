@@ -51,18 +51,16 @@ window.addEventListener("load", () => {
   }*/
 
   function shift() {
-    if (!isUpperCase && !activateCapLock) {
-      kbdKey.forEach((btn) => {
-        btn.value = btn.value.toUpperCase();
-        if (!isUpperCase) {
-          btn.addEventListener("click", () => {
-            kbdKey.forEach((btn) => {
-              btn.value = btn.value.toLowerCase();
-            });
+    kbdKey.forEach((btn) => {
+      btn.value = btn.value.toUpperCase();
+      if (!isUpperCase) {
+        btn.addEventListener("click", () => {
+          kbdKey.forEach((btn) => {
+            btn.value = btn.value.toLowerCase();
           });
-        }
-      });
-    }
+        });
+      }
+    });
   }
 
   if (activateCapLock === false) {
@@ -70,10 +68,12 @@ window.addEventListener("load", () => {
   }
 
   // upperCase/lowerCase
+
   capLock.addEventListener("click", () => {
-    if (!isUpperCase && !activateCapLock) {
+    if (!isUpperCase) {
       capLock.value = "MIN";
       isUpperCase = true;
+      console.log(activateCapLock);
       activateCapLock = true;
       capLockLed.classList.replace("majColor", "ledOn");
       padLock.classList.replace("fa-lock-open", "fa-lock");
@@ -83,13 +83,14 @@ window.addEventListener("load", () => {
       });
     } else {
       capLock.value = "MAJ";
-      isUpperCase = false;
-      activateCapLock = false;
+      isUpperCase = true;
+      console.log(activateCapLock);
       capLockLed.classList.replace("ledOn", "majColor");
       padLock.classList.replace("fa-lock", "fa-lock-open");
       kbdKey.forEach((btn) => {
         console.log(btn.value);
         btn.value = btn.value.toLowerCase();
+        activateCapLock = false;
         shiftKey.value = "MAJ";
       });
     }
