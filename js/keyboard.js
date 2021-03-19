@@ -40,7 +40,6 @@ window.addEventListener("load", () => {
         btn.value = btn.value.toUpperCase();
         shiftKey.value = "MIN";
         isCapLockActive = true;
-        console.log("capslock actif");
         console.log(isCapLockActive);
       });
     } else {
@@ -53,32 +52,32 @@ window.addEventListener("load", () => {
         console.log(btn.value);
         btn.value = btn.value.toLowerCase();
         console.log(isCapLockActive);
-        console.log("capslock inactif");
         shiftKey.value = "MAJ";
       });
     }
   });
   // shifkey
+  // .map()
   // si j'appuie sur la touche shift et ensuite la touche caplock , alors caplock doit prendre le dessus
   // sinon , shift fonctionne
   // créer une variable indiquant que shiftkey est actif , une variable indiquant que caplock est enclenché ou non
-  console.log(isCapLockActive);
-  if (isCapLockActive === false) {
-    shiftKey.addEventListener("click", () => {
-      console.log("shifkey actif");
-      isShiftActive = true;
-      if (isShiftActive === true && isCapLockActive === false) {
-        kbdKey.forEach((key) => {
-          if (isCapLockActive === false) {
-            key.value = key.value.toUpperCase();
-            key.addEventListener("click", () => {
-              key.value.toLowerCase();
+  /* shiftKey.addEventListener("click", shift);
+  function shift() {
+    if (!isUpperCase && !isCapLockActive) {
+      kbdKey.forEach((btn) => {
+        isShiftActive = true;
+        btn.value = btn.value.toUpperCase();
+        if (isShiftActive && !isCapLockActive) {
+          btn.addEventListener("click", () => {
+            kbdKey.map(function lowercase() {
+              btn.value = btn.value.toLowerCase();
             });
-          }
-        });
-      }
-    });
-  }
+          });
+        }
+      });
+    }
+  }*/
+
   // Delete
   deleteBtn.addEventListener("click", () => {
     textWriting.value = textWriting.value.slice(0, -1);
