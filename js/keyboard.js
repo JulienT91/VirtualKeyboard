@@ -14,8 +14,6 @@ window.addEventListener("load", () => {
   const qwertyBtn = document.querySelector("#changeBtn");
 
   let newValue = "";
-  let isUpperCase = false;
-  let activateCapLock = false;
   let isNightMode = false;
 
   // Enter
@@ -27,75 +25,60 @@ window.addEventListener("load", () => {
     textWriting.value += " ";
   });
 
-  //ShiftKey
-  // faire une condition pour tester si capLock = true
-  // si caplock === true alors , isuppercase === true
-  // si caplock === true et isuppercase === true alors la valeur est en minuscule sinon
-  /* function shift() {
-    isUpperCase = false;
-    if (!isUpperCase) {
-      capLock.value = "MIN";
-      kbdKey.forEach((btn) => {
-        btn.value = btn.value.toUpperCase();
-        shiftKey.value = "MIN";
-        isUpperCase = true;
-        if (!isUpperCase) {
-          btn.addEventListener("click", () => {
-            kbdKey.forEach((btn) => {
-              btn.value = btn.value.toLowerCase();
-            });
-          });
-        }
-      });
-    }
-  }*/
-
-  function shift() {
-    kbdKey.forEach((btn) => {
-      btn.value = btn.value.toUpperCase();
-      if (!isUpperCase) {
-        btn.addEventListener("click", () => {
-          kbdKey.forEach((btn) => {
-            btn.value = btn.value.toLowerCase();
-          });
-        });
-      }
-    });
-  }
-
-  if (activateCapLock === false) {
-    shiftKey.addEventListener("click", shift);
-  }
+  let isUpperCase = false;
+  let isShiftActive;
+  let isCapLockActive = false;
 
   // upperCase/lowerCase
-
   capLock.addEventListener("click", () => {
     if (!isUpperCase) {
       capLock.value = "MIN";
       isUpperCase = true;
-      console.log(activateCapLock);
-      activateCapLock = true;
       capLockLed.classList.replace("majColor", "ledOn");
       padLock.classList.replace("fa-lock-open", "fa-lock");
       kbdKey.forEach((btn) => {
         btn.value = btn.value.toUpperCase();
         shiftKey.value = "MIN";
+        isCapLockActive = true;
+        console.log("capslock actif");
+        console.log(isCapLockActive);
       });
     } else {
       capLock.value = "MAJ";
-      isUpperCase = true;
-      console.log(activateCapLock);
+      isUpperCase = false;
       capLockLed.classList.replace("ledOn", "majColor");
       padLock.classList.replace("fa-lock", "fa-lock-open");
+      isCapLockActive = false;
       kbdKey.forEach((btn) => {
         console.log(btn.value);
         btn.value = btn.value.toLowerCase();
-        activateCapLock = false;
+        console.log(isCapLockActive);
+        console.log("capslock inactif");
         shiftKey.value = "MAJ";
       });
     }
   });
-
+  // shifkey
+  // si j'appuie sur la touche shift et ensuite la touche caplock , alors caplock doit prendre le dessus
+  // sinon , shift fonctionne
+  // créer une variable indiquant que shiftkey est actif , une variable indiquant que caplock est enclenché ou non
+  console.log(isCapLockActive);
+  if (isCapLockActive === false) {
+    shiftKey.addEventListener("click", () => {
+      console.log("shifkey actif");
+      isShiftActive = true;
+      if (isShiftActive === true && isCapLockActive === false) {
+        kbdKey.forEach((key) => {
+          if (isCapLockActive === false) {
+            key.value = key.value.toUpperCase();
+            key.addEventListener("click", () => {
+              key.value.toLowerCase();
+            });
+          }
+        });
+      }
+    });
+  }
   // Delete
   deleteBtn.addEventListener("click", () => {
     textWriting.value = textWriting.value.slice(0, -1);
